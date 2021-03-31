@@ -76,10 +76,8 @@ LRESULT WINAPI ESWindowProc ( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam
             eglSwapBuffers ( esContext->eglDisplay, esContext->eglSurface );
          }
 
-         if ( esContext )
-         {
+         if(esContext)
             ValidateRect ( esContext->eglNativeWindow, NULL );
-         }
       }
       break;
 

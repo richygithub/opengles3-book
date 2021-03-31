@@ -8,6 +8,10 @@ set ( common_src Source/esShader.c
 if(WIN32)
     set( common_platform_src Source/Win32/esUtil_win32.c )
     add_library( Common STATIC ${common_src} ${common_platform_src} )
+    set( EGL_LIBRARY $ENV{EGL_LIBRARY})
+    set( OPENGLES3_LIBRARY $ENV{OPENGLES3_LIBRARY})
+
+    message("--- egl link :${OPENGLES3_LIBRARY}, ${EGL_LIBRARY}, $ENV{EGL_LIBRARY}")
     target_link_libraries( Common ${OPENGLES3_LIBRARY} ${EGL_LIBRARY} )
 else()
     find_package(X11)

@@ -218,9 +218,9 @@ GLboolean ESUTIL_API esCreateWindow ( ESContext *esContext, const char *title, G
    }
 #endif // ANDROID
 
-   // Create a surface
+  // Create a surface
    esContext->eglSurface = eglCreateWindowSurface ( esContext->eglDisplay, config, 
-                                                    esContext->eglNativeWindow, NULL );
+                                                    esContext->eglNativeWindow, NULL);
 
    if ( esContext->eglSurface == EGL_NO_SURFACE )
    {
